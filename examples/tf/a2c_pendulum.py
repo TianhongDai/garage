@@ -54,12 +54,12 @@ def a2c_pendulum(ctxt=None, seed=1):
             stop_entropy_gradient=True,
             center_adv=False,
             discount=0.99,
-            optimizer_args=dict(learning_rate=0.001),
+            optimizer_args=dict(learning_rate=1e-3),
         )
 
         runner.setup(algo, env)
 
-        runner.train(n_epochs=2000, batch_size=512)
+        runner.train(n_epochs=500, batch_size=2000)
 
 
-a2c_pendulum(seed=1)
+a2c_pendulum(seed=2)
